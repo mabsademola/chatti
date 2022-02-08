@@ -1,0 +1,219 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+const kPrimaryColor = Color(0xFFF76361);
+const kAccentColor = Color(0xFF1D1D35);
+const kSecondaryColor = Color(0xFFFE9901);
+const kOnlineColor = Colors.green;
+const kContentColorLightTheme = Color(0xFF1D1D35);
+const buttonFollowColor = Color(0xFF0494F5);
+const kContentColorDarkTheme = Colors.white70;
+const white = Colors.white60;
+const textFieldBackground = Color(0xFF262626);
+const kWarninngColor = Color(0xFFF3BB1C);
+const kErrorColor = Color(0xFFF03738);
+const storyBorderColor = [Color(0xFF9B2282), Color(0xFFEEA863)];
+
+const kDefaultPadding = 15.0;
+const kkDefaultPadding = 20.0;
+
+String maleimg =
+    "https://firebasestorage.googleapis.com/v0/b/chatti-5e588.appspot.com/o/default_img%2Fimg_default_avatar_man.png?alt=media&token=80d9ca16-8e4e-402c-968a-ba9d5895e850";
+
+String femaleimg =
+    "https://firebasestorage.googleapis.com/v0/b/chatti-5e588.appspot.com/o/default_img%2Fimg_default_avatar_woman.png?alt=media&token=9e438604-326c-4772-835d-11a12831344a";
+
+ThemeData themeData(BuildContext context) {
+  final Brightness brightness =
+      ThemeData.estimateBrightnessForColor(kContentColorLightTheme);
+  final Color canvasColor = kContentColorLightTheme.withOpacity(0.7);
+  return ThemeData.dark().copyWith(
+    brightness: brightness,
+    visualDensity: VisualDensity.standard,
+    primaryColor: kPrimaryColor,
+    canvasColor: canvasColor,
+    scaffoldBackgroundColor: kContentColorLightTheme,
+    cardColor: canvasColor,
+    errorColor: kErrorColor,
+    materialTapTargetSize: MaterialTapTargetSize.padded,
+    buttonTheme: const ButtonThemeData(
+      textTheme: ButtonTextTheme.primary,
+    ),
+
+    dialogBackgroundColor: canvasColor,
+    toggleableActiveColor: kPrimaryColor,
+    // textTheme: ThemeData.dark().textTheme.apply(),
+
+    appBarTheme: AppBarTheme(
+      textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+          .apply(bodyColor: kContentColorDarkTheme),
+      iconTheme: IconThemeData(color: kContentColorDarkTheme),
+      centerTitle: false,
+      elevation: 0,
+      backgroundColor: kContentColorLightTheme,
+    ),
+    iconTheme: IconThemeData(color: kContentColorDarkTheme),
+    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+        .apply(bodyColor: kContentColorDarkTheme),
+
+    colorScheme: ColorScheme.fromSwatch(
+      brightness: Brightness.dark,
+      primarySwatch: createMaterialColor(kPrimaryColor),
+      errorColor: kContentColorDarkTheme,
+      backgroundColor: kContentColorDarkTheme,
+    ).copyWith(
+      primary: kPrimaryColor,
+      secondary: kPrimaryColor,
+      error: kErrorColor,
+    ),
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: kContentColorLightTheme,
+      selectedItemColor: Colors.white70,
+      unselectedItemColor: kContentColorDarkTheme.withOpacity(0.32),
+      selectedIconTheme: IconThemeData(color: kPrimaryColor),
+      showUnselectedLabels: true,
+    ),
+    // colorScheme: ColorScheme.dark().copyWith(
+    //   primary: kPrimaryColor,
+    //   secondary: kPrimaryColor,
+    //   error: kErrorColor,
+    // ).copyWith(secondary: kPrimaryColor).copyWith(secondary: kAccentColor),
+  );
+}
+
+const kSpacingUnit = 10;
+final kTitleTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(kSpacingUnit.w * 1.7),
+  fontWeight: FontWeight.w600,
+);
+
+MaterialColor createMaterialColor(Color color) {
+  List strengths = <double>[.05];
+  Map swatch = <int, Color>{};
+  final int r = color.red, g = color.green, b = color.blue;
+
+  for (int i = 1; i < 10; i++) {
+    strengths.add(0.1 * i);
+  }
+  strengths.forEach((strength) {
+    final double ds = 0.5 - strength;
+    swatch[(strength * 1000).round()] = Color.fromRGBO(
+      r + ((ds < 0 ? r : (255 - r)) * ds).round(),
+      g + ((ds < 0 ? g : (255 - g)) * ds).round(),
+      b + ((ds < 0 ? b : (255 - b)) * ds).round(),
+      1,
+    );
+  });
+  // //Print(color.value);
+  // //Print(swatch);
+  //Print("MaterialColor(${color.value},$swatch);");
+  return MaterialColor(color.value, swatch);
+}
+
+// Colors
+
+const kTextFieldFill = Color(0xff1E1C24);
+// TextStyles
+const kHeadline = TextStyle(
+  // ,
+  fontSize: 34,
+  fontWeight: FontWeight.bold,
+);
+
+const kBodyText = TextStyle(
+  color: Colors.grey,
+  fontSize: 15,
+);
+
+const kButtonText = TextStyle(
+  color: Colors.black87,
+  fontSize: 17,
+  fontWeight: FontWeight.bold,
+);
+
+const kBodyText12 = TextStyle(
+  fontSize: 36,
+  fontWeight: FontWeight.w500,
+);
+
+const kBodyText2 = TextStyle(
+  fontSize: 28,
+  fontWeight: FontWeight.w500,
+);
+
+const kBodyText3 = TextStyle(
+  fontSize: 28,
+  fontWeight: FontWeight.w300,
+);
+
+class Constants {
+  static String dummyProfilePic =
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6TaCLCqU4K0ieF27ayjl51NmitWaJAh_X0r1rLX4gMvOe0MDaYw&s';
+  static List<String> autogeneratedpics = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6TaCLCqU4K0ieF27ayjl51NmitWaJAh_X0r1rLX4gMvOe0MDaYw&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFDjXj1F8Ix-rRFgY_r3GerDoQwfiOMXVt-tZdv_Mcou_yIlUC&s',
+    'http://www.azembelani.co.za/wp-content/uploads/2016/07/20161014_58006bf6e7079-3.png',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDG366qY7vXN2yng09wb517WTWqp-oua-mMsAoCadtncPybfQ&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq7BgpG1CwOveQ_gEFgOJASWjgzHAgVfyozkIXk67LzN1jnj9I&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPxjRIYT8pG0zgzKTilbko-MOv8pSnmO63M9FkOvfHoR9FvInm&s',
+    'https://cdn5.f-cdn.com/contestentries/753244/11441006/57c152cc68857_thumb900.jpg',
+    'https://cdn6.f-cdn.com/contestentries/753244/20994643/57c189b564237_thumb900.jpg'
+  ];
+}
+
+class TextStyles {
+  static TextStyle bodyText15(BuildContext context) =>
+      bodyText14(context).copyWith(
+        fontSize: 15,
+      );
+
+  static TextStyle headline14(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 14,
+      );
+  static TextStyle headline16(BuildContext context) =>
+      bodyText15(context).copyWith(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      );
+  static TextStyle headline15(BuildContext context) =>
+      bodyText15(context).copyWith(
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+      );
+
+  static TextStyle headline18(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 18,
+      );
+  static TextStyle headline20(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 20,
+      );
+  static TextStyle headline26(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 26,
+      );
+  static TextStyle headline30(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 30,
+      );
+  static TextStyle headline36(BuildContext context) =>
+      headline16(context).copyWith(
+        fontSize: 36,
+      );
+  static TextStyle subtitle14(BuildContext context,
+          {FontWeight fontWeight = FontWeight.normal}) =>
+      bodyText14(context).copyWith(
+        fontWeight: fontWeight,
+      );
+  static TextStyle subtitle16(BuildContext context,
+          {FontWeight fontWeight = FontWeight.normal}) =>
+      subtitle14(context, fontWeight: fontWeight).copyWith(
+        fontSize: 16,
+      );
+
+  static bodyText14(BuildContext context) {}
+}

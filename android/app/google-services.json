@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986780342191",
+    "project_id": "chatti-5e588",
+    "storage_bucket": "chatti-5e588.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986780342191:android:4f7a8e1af0b8dcc928015a",
+        "android_client_info": {
+          "package_name": "com.mabshooter.chatti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986780342191-16no508q09ksicha1sn2p20474h6safr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyZGRxxmJQmQg8ZdTb7Bg38pa4keFMhM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986780342191-16no508q09ksicha1sn2p20474h6safr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2147668903179682~6340095418"
+    }
+  ],
+  "configuration_version": "1"
+}
